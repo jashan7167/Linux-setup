@@ -1,5 +1,7 @@
 # Paths and Environment Setup
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/go/bin:/home/jashan/.local/share/fnm:$PATH"
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+export PATH=/home/jsb/.jdks/openjdk-23.0.1/bin:$PATH
 eval "$(brew shellenv)"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -177,12 +179,8 @@ gcom() {
 
 
 #setup autojump
-if [ -f "/usr/share/autojump/autojump.sh" ]; then
-	. /usr/share/autojump/autojump.sh
-elif [ -f "/usr/share/autojump/autojump.bash" ]; then
-	. /usr/share/autojump/autojump.bash
-else
-	echo "can't found the autojump script"
+if [ -f "/home/jsb/Personal/autojump/bin/autojump.zsh" ]; then
+    source /home/jsb/Personal/autojump/bin/autojump.zsh
 fi
 
 
