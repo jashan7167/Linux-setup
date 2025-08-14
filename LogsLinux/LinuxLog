@@ -1,0 +1,58 @@
+installed 
+brew
+zsh
+eza
+code
+python3.12-venv
+python3-pip
+intellij - created desktop entry
+java jdk ~/
+sourced autojump in personal
+installed ipykernelfor 3.10 and 3.12 for jupyter
+installed bleachbit
+installed mongodb compass through the deb (not the snap one)
+downloaded 8 and 21 java in sdkman
+
+applets
+drawer
+cpu temp
+weather
+
+app images
+keepassxc
+
+added paths
+.local/kitty
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+
+Customisation
+changed only theme to catpuccing
+changed icons to papirus using official script
+
+
+Repositories
+sudo add-apt-repository ppa:deadsnakes/ppa - python old versions
+docker
+redis
+
+
+Python 3.10 - for major project 
+sudo apt install python3.10 python3.10-venv python3.10-distutils
+sudo apt install python3.10-dev
+sudo apt install build-essential libhunspell-dev
+sudo apt install libenchant-2-dev - to make enchant work
+
+
+Redis
+
+DOCKER
+GPG KEY ADDED AND APT REPO
+installed docker desktop
+
+
+brew services start kafka
+Created symlink /home/jsb/.config/systemd/user/default.target.wants/homebrew.kafka.service → /home/jsb/.config/systemd/user/homebrew.kafka.service.
+==> Successfully started `kafka` (label: homebrew.kafka)
+
+
+

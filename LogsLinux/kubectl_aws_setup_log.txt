@@ -1,0 +1,78 @@
+System Setup Log – kubectl + AWS CLI + IAM Authenticator
+Date: 2025-07-23
+OS: Linux (x86_64)
+Purpose: Setup AWS and Kubernetes CLI tools for EKS interaction.
+
+------------------------------------------------------------
+1. Installed AWS CLI v2
+------------------------------------------------------------
+# Download and unzip
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+
+# Install
+sudo ./aws/install
+
+# Confirm installation
+aws --version
+
+✅ Outcome: Installed AWS CLI v2 successfully.
+
+------------------------------------------------------------
+2. Installed AWS IAM Authenticator
+------------------------------------------------------------
+# Download binary
+curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
+
+# Make it executable and move it to PATH
+chmod +x aws-iam-authenticator
+sudo mv aws-iam-authenticator /usr/local/bin/
+
+# Confirm version
+aws-iam-authenticator version
+
+✅ Outcome: Authenticator binary installed in /usr/local/bin.
+
+------------------------------------------------------------
+3. Configured AWS CLI Credentials
+------------------------------------------------------------
+# Run AWS config prompt
+aws configure
+
+Credentials Used:
+- aws_access_key_id: AKIAZDPKQKYGH3FY4IQN
+- aws_secret_access_key: zhbuR0/g5a99M68IzQKEVAzmjA95IaBtIWrMS
+- region: (left blank)
+- output format: json
+
+Manual Additions:
+- Placed config, credentials, and credentials copy into ~/.aws/
+
+------------------------------------------------------------
+4. Configured Kubernetes Credentials
+------------------------------------------------------------
+# Create .kube directory
+mkdir -p ~/.kube
+
+# Manually place provided UAT/PROD config file into:
+~/.kube/config
+
+------------------------------------------------------------
+5. Installed kubectl (latest stable)
+------------------------------------------------------------
+# Download and install
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+
+# Verify
+kubectl version --client
+
+✅ Outcome: Latest kubectl installed and executable globally.
+
+------------------------------------------------------------
+6. Tested Connection
+------------------------------------------------------------
+kubectl get pods -n egov
+
+✅ Outcome: Successfully retrieved pods (access verified via provided kube config).

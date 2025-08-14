@@ -1,0 +1,48 @@
+1. Package Management & Installation
+
+    Brew: Installed via brew.
+    Zsh: Installed and set up as default shell.
+    Eza: Installed (replacement for ls).
+    Code (VS Code): Installed.
+    Python:
+        Installed Python 3.12 venv: python3.12-venv.
+        Installed pip: python3-pip.
+        Installed Python 3.10 for major project:
+        sudo apt install python3.10 python3.10-venv python3.10-distutils
+        sudo apt install python3.10-dev
+        sudo apt install build-essential libhunspell-dev
+        sudo apt install libenchant-2-dev
+        nstalled ipykernel for Python 3.10 and 3.12 for Jupyter.
+    IntelliJ: Installed and created a desktop entry.
+    Java JDK: Installed at ~/.
+    BleachBit: Installed for system cleanup.
+    LazyGit : Installed and Added Repository From Github Repo
+    installed powerprofilesctl 
+
+2. System Customization
+
+    Theme: Set Catppuccin as the theme.
+    Icons: Changed to Papirus using the official script.
+    Applets:
+        Installed Drawer.
+        Installed CPU Temp.
+        Installed Weather.
+
+3. Paths & Environment Variables
+
+    Added path for kitty:export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+    Added alias for kafka
+
+4. Repositories
+    Added PPA for older Python versions:sudo add-apt-repository ppa:deadsnakes/ppa
+
+5. Applications
+
+    App Images:
+        Installed KeePassXC.
+        Installed Bitwarden
+        Installed
+
+6. Terminal Customization
+
+    Sourced autojump in the personal config.
