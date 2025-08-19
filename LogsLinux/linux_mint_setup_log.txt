@@ -1,9 +1,12 @@
 Linux Mint Setup Log
-Generated on: 2025-08-19 12:33:15
+Generated on: 2025-08-19 12:40:51
 
 =======================================
-📦 Installed Packages & Tools
+🚀 Initial Setup
 =======================================
+
+📦 Installed Packages & Tools
+---------------------------------------
 - Homebrew (Linuxbrew)
   Installed in: /home/linuxbrew/.linuxbrew
   PATH updated → export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
@@ -29,38 +32,33 @@ Generated on: 2025-08-19 12:33:15
 - MongoDB Compass (installed via .deb, not snap)
 
 
-=======================================
 🍎 AppImages
-=======================================
+---------------------------------------
 - KeePassXC
 
 
-=======================================
 ⚙️ Applets
-=======================================
+---------------------------------------
 - Drawer
 - CPU Temperature
 - Weather
 
 
-=======================================
 🎨 Customization
-=======================================
+---------------------------------------
 - Theme: Catppuccin
 - Icons: Papirus (installed via official script)
 
 
-=======================================
 📚 Repositories Added
-=======================================
+---------------------------------------
 - ppa:deadsnakes/ppa → Python old versions
 - Docker apt repo (with GPG key)
 - Redis apt repo
 
 
-=======================================
 🐍 Python Setup
-=======================================
+---------------------------------------
 Python 3.10 (for major project):
   sudo apt install python3.10 python3.10-venv python3.10-distutils
   sudo apt install python3.10-dev
@@ -68,19 +66,42 @@ Python 3.10 (for major project):
   sudo apt install libenchant-2-dev   # for enchant support
 
 
-=======================================
 🐳 Docker & Redis
-=======================================
+---------------------------------------
 - Docker Desktop installed (repo + GPG key added)
 - Redis installed from official apt repo
 
 
-=======================================
 ☕ Kafka
-=======================================
+---------------------------------------
 - Installed via Homebrew
 - Service started with systemd user unit:
     brew services start kafka
 - Symlink created:
     /home/jsb/.config/systemd/user/default.target.wants/homebrew.kafka.service → /home/jsb/.config/systemd/user/homebrew.kafka.service
 - Successfully started service (label: homebrew.kafka)
+
+
+=======================================
+⚡ Performance Tuning
+=======================================
+
+- Installed TLP for power management:
+    sudo apt install tlp tlp-rdw
+    sudo systemctl enable tlp
+    sudo systemctl start tlp
+
+- Modified TLP config:
+    sudo nano /etc/tlp.conf
+    Changed: CPU_SCALING_GOVERNOR_ON_BAT=powersave → performance (or ondemand)
+
+- Verified current CPU governor:
+    cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+- Installed cpufrequtils and set governor:
+    sudo apt install cpufrequtils
+    sudo cpufreq-set -g performance
+
+- Checked NVIDIA/AMD power settings for performance mode
+- Adjusted SSD/HDD power management (disabled aggressive spin-down):
+    sudo hdparm -B 255 /dev/sda
