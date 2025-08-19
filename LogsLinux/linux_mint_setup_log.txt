@@ -1,0 +1,86 @@
+Linux Mint Setup Log
+Generated on: 2025-08-19 12:33:15
+
+=======================================
+📦 Installed Packages & Tools
+=======================================
+- Homebrew (Linuxbrew)
+  Installed in: /home/linuxbrew/.linuxbrew
+  PATH updated → export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+
+- Zsh (shell)
+  Configured with autojump sourced in ~/.zshrc
+
+- eza (modern replacement for ls)
+- Visual Studio Code (code)
+- Python
+  - python3.12-venv, python3-pip installed
+  - Jupyter kernels created for Python 3.10 and Python 3.12
+  - Installed ipykernel for both versions
+
+- Java
+  - JDK installed manually in ~/ 
+  - Installed Java 8 and 21 using SDKMAN
+
+- IntelliJ IDEA
+  Installed & desktop entry created
+
+- BleachBit (system cleaner)
+- MongoDB Compass (installed via .deb, not snap)
+
+
+=======================================
+🍎 AppImages
+=======================================
+- KeePassXC
+
+
+=======================================
+⚙️ Applets
+=======================================
+- Drawer
+- CPU Temperature
+- Weather
+
+
+=======================================
+🎨 Customization
+=======================================
+- Theme: Catppuccin
+- Icons: Papirus (installed via official script)
+
+
+=======================================
+📚 Repositories Added
+=======================================
+- ppa:deadsnakes/ppa → Python old versions
+- Docker apt repo (with GPG key)
+- Redis apt repo
+
+
+=======================================
+🐍 Python Setup
+=======================================
+Python 3.10 (for major project):
+  sudo apt install python3.10 python3.10-venv python3.10-distutils
+  sudo apt install python3.10-dev
+  sudo apt install build-essential libhunspell-dev
+  sudo apt install libenchant-2-dev   # for enchant support
+
+
+=======================================
+🐳 Docker & Redis
+=======================================
+- Docker Desktop installed (repo + GPG key added)
+- Redis installed from official apt repo
+
+
+=======================================
+☕ Kafka
+=======================================
+- Installed via Homebrew
+- Service started with systemd user unit:
+    brew services start kafka
+- Symlink created:
+    /home/jsb/.config/systemd/user/default.target.wants/homebrew.kafka.service → /home/jsb/.config/systemd/user/homebrew.kafka.service
+- Successfully started service (label: homebrew.kafka)
