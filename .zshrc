@@ -35,6 +35,7 @@ SAVEHIST=$HISTSIZE
 setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
 # Aliases
+# Dont use single & it means run in background use && for and purposes
 alias ll='eza -al --group-directories-first'
 alias ls='eza -G --color=always --sort=size'
 alias la='eza -a --color=always'
@@ -48,6 +49,9 @@ alias bat='batcat'
 alias upgrade='sudo apt update && sudo apt upgrade'
 alias kittyupdate='curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin'
 alias lg='lazygit'
+alias kf='/home/linuxbrew/.linuxbrew/opt/kafka/libexec/bin/kafka-server-start.sh /home/linuxbrew/.linuxbrew/opt/kafka/libexec/config/server.properties'
+alias clean='sudo apt clean && apt autoremove'
+alias perform='sudo cpufreq-set -g performance && systemctl enable tlp && tlp start'
 
 # Colorful man pages
 export LESS_TERMCAP_mb=$'\e[1;31m'
