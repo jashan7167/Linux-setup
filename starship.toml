@@ -1,0 +1,234 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](surface0)\
+$os\
+$username\
+[](bg:red fg:surface0)\
+$directory\
+[](fg:red bg:green)\
+$git_branch\
+$git_status\
+[](fg:green bg:teal)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:teal bg:blue)\
+$docker_context\
+[](fg:blue bg:purple)\
+$time\
+[ ](fg:purple)\
+$line_break$character"""
+
+palette = 'gruvbox_green'
+
+[palettes.gruvbox_green]
+rosewater = "#d5c4a1"   # warm cream like morning mist
+flamingo   = "#bdae93"  # soft beige like weathered stone
+pink       = "#d3869b"  # dusty rose like alpine flowers
+red        = "#cc241d"  # deep red like autumn leaves
+maroon     = "#a02e2e"  # darker red like mountain clay
+peach      = "#e78a4e"  # bright orange like sunset through trees
+yellow     = "#d79921"  # golden yellow like sunlight filtering through fog
+green      = "#8fb029"  # bright medium green like pine needles
+teal       = "#7fa873"  # fresh green-teal like moss on rocks
+sky        = "#83a598"  # misty blue like mountain sky
+sapphire   = "#6a9dc2"  # clearer blue like high altitude sky
+blue       = "#528bb8"  # bright blue like clear mountain lakes
+lavender   = "#b888aa"  # soft purple like mountain wildflowers
+text       = "#ebdbb2"  # warm white like morning fog
+subtext1   = "#d5c4a1"  # light tan like dried grass
+subtext0   = "#bdae93"  # medium beige like tree bark
+overlay2   = "#a89984"  # warm gray like granite
+overlay1   = "#928374"  # darker gray like storm clouds
+overlay0   = "#7c6f64"  # muted brown like earth
+surface2   = "#504945"  # dark brown like rich soil
+surface1   = "#3c3836"  # deep earth like forest floor
+surface0   = "#2e3330"  # dark green-gray like deep forest shadow
+base       = "#282828"  # charcoal like night forest
+mantle     = "#1d2021"  # near black like cave depths
+crust      = "#0f1311"  # darkest green-black like deep earth
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+orange = "#cba6f7"
+red = "#8c1c13"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+
+[palettes.catppuccin_fresh]
+rosewater = "#ffd7d9"   # brighter rose
+flamingo   = "#ffb3ba"  # soft pink-red
+pink       = "#ff9edb"  # vivid pink
+red        = "#ff5c5c"  # fresh bright red
+maroon     = "#d94b76"  # deeper red-pink
+peach      = "#ffb86c"  # warm peach
+yellow     = "#ffe66d"  # bright pastel yellow
+green      = "#98ff98"  # mint green
+teal       = "#4fd1c5"  # fresh teal
+sky        = "#63c5ff"  # sky blue
+sapphire   = "#3dbdff"  # deeper sky blue
+blue       = "#7aa2f7"  # lively blue
+lavender   = "#b4a7ff"  # bright lavender
+text       = "#f8f8f2"  # light foreground
+subtext1   = "#e5e9f0"
+subtext0   = "#d8dee9"
+overlay2   = "#c0caf5"
+overlay1   = "#a9b1d6"
+overlay0   = "#9197b3"
+surface2   = "#44475a"
+surface1   = "#3b3f51"
+surface0   = "#2b2d3a"
+base       = "#1f2029"
+mantle     = "#191a21"
+crust      = "#14151a"
+
+
+[os]
+disabled = false
+style = "bg:surface0 fg:text"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:surface0 fg:text"
+style_root = "bg:surface0 fg:text"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:text bg:red"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+
+[git_status]
+style = "bg:teal"
+format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[c]
+symbol = " "
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[php]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[java]
+symbol = " "
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[python]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:mantle"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:peach"
+format = '[[  $time ](fg:mantle bg:purple)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:green)'
+error_symbol = '[](bold fg:red)'
+vimcmd_symbol = '[](bold fg:creen)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:lavender)'
