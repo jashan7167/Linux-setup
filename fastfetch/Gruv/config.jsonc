@@ -1,0 +1,82 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/ascii.txt",
+    "padding": {
+      "top": 1,
+      "left": 2
+    },
+"color": {
+  "1": "38;5;121"
+}
+
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "keys": "light_green",
+      "title": "light_green"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "\u001b[1;38;5;121m┌─[\u001b[0;38;5;121m {1}@{2} \u001b[1;38;5;121m]\u001b[0m"
+    },
+    {
+      "type": "separator",
+      "string": "\u001b[38;5;121m├─────────────────────────────\u001b[0m"
+    },
+    {
+      "type": "os",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mOS\u001b[0;38;5;121m]........\u001b[0m",
+      "format": "{2} {12}"
+    },
+    {
+      "type": "kernel",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mKernel\u001b[0;38;5;121m].....\u001b[0m"
+    },
+    {
+      "type": "uptime",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mUptime\u001b[0;38;5;121m].....\u001b[0m"
+    },
+    {
+      "type": "packages",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mPackages\u001b[0;38;5;121m]...\u001b[0m"
+    },
+    {
+      "type": "shell",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mShell\u001b[0;38;5;121m]......\u001b[0m"
+    },
+    {
+      "type": "terminal",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mTerminal\u001b[0;38;5;121m]...\u001b[0m"
+    },
+    {
+      "type": "cpu",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mCPU\u001b[0;38;5;121m]........\u001b[0m",
+      "format": "{1}"
+    },
+    {
+      "type": "gpu",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mGPU\u001b[0;38;5;121m]........\u001b[0m",
+      "format": "{2}"
+    },
+    {
+      "type": "memory",
+      "key": "\u001b[38;5;121m├─[\u001b[1;38;5;121mMemory\u001b[0;38;5;121m].....\u001b[0m"
+    },
+    {
+      "type": "disk",
+      "key": "\u001b[38;5;121m└─[\u001b[1;38;5;121mDisk\u001b[0;38;5;121m].......\u001b[0m",
+      "folders": "/"
+    },
+    "break",
+    {
+      "type": "colors",
+      "paddingLeft": 4,
+      "symbol": "circle"
+    }
+  ]
+}
+
